@@ -152,7 +152,7 @@
         
         <Message Text="Restoring NuGet packages" Importance="High" />
         <Exec Command="&quot;$(NuGetRoot)\lib\nuget.exe&quot; restore $(NuGetRoot)\NuGet.sln -source &quot;$(PackageSources)&quot;" WorkingDirectory="$(NuGetRoot)" Condition="'$(MonoBuild)' == ''" />
-        <Exec Command="mono $(NuGetRoot)\lib\NuGet.exe restore $(NuGetRoot)\NuGet.CommandLine.sln -source &quot;$(PackageSources)&quot;" WorkingDirectory="$(NuGetRoot)" Condition="'$(MonoBuild)' == 'true'"/>
+        <Exec Command="mono $(NuGetRoot)\lib\NuGet.exe restore NuGet.CommandLine.sln $(NuGetRoot)\NuGet.CommandLine.sln -source &quot;$(PackageSources)&quot;" WorkingDirectory="$(NuGetRoot)" Condition="'$(MonoBuild)' == 'true'"/>
     </Target>
 
     <Target Name="Build">

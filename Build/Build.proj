@@ -157,7 +157,7 @@
 
         <Message Text="Restoring NuGet packages" Importance="High" />
         <Exec Command="&quot;$(ExeBuildDirectory)\NuGet.exe&quot; restore -source &quot;$(PackageSources)&quot;" WorkingDirectory="$(NuGetRoot)" Condition="'$(MonoBuild)' == ''" />
-        <Exec Command="mono $(ExeBuildDirectory)\NuGet.exe restore -source &quot;$(PackageSources)&quot;" WorkingDirectory="$(NuGetRoot)" Condition="'$(MonoBuild)' == 'true'"/>
+        <Exec Command="mono $(ExeBuildDirectory)\NuGet.exe restore NuGet.sln -source &quot;$(PackageSources)&quot;" WorkingDirectory="$(NuGetRoot)" Condition="'$(MonoBuild)' == 'true'"/>
     </Target>
 
     <Target Name="Build">
